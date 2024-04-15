@@ -2,18 +2,20 @@
 @use '../../styles/variables' as *;
 
 .header{
-    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: $poke-red;
 
     &__logo{
         transform: rotate(340deg);
+        margin: 2rem 0 .5rem 0;
     }
 
     &__link-cont{
         list-style: none;
         display: flex;
+        margin-bottom: 1.25rem;
     }
 
     &__link{
