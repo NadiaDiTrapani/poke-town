@@ -1,0 +1,20 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.pokedex{
+    background:$red-grad;
+    padding: 1rem 0 2rem 0;
+
+    &__title-cont{
+        background-color: #000;
+        margin: 2rem 0 2rem .5rem;
+        padding: .75rem 1rem 1.75rem 1rem;
+    }
+
+    &__title{
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: -1.75rem 0;
+    }
+}
