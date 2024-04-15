@@ -9,7 +9,7 @@ function SubNav(){
                     <li className='subnav__links'>viridian city </li>                    
                 </div>
                 <div className='subnav__links--underline'>
-                <li className='subnav__links'>pewter city</li>
+                    <li className='subnav__links'>pewter city</li>
                     <li className='subnav__links'>cerulean city </li>
                 </div>
             </ul>
