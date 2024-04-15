@@ -6,15 +6,19 @@ function Header(){
     return(
         <div className='header'>
             <div>
-                <NavLink to='/' className='header__logo'>
+                <NavLink to='/'>
                     <img src={logo} alt='pika logo' className='header__logo'/>
                 </NavLink>
             </div>
 
-            <div>
-                <button className='header__btn'>Towns</button>
-                <button className='header__btn'>Pokédex</button>
-            </div>
+            <ul className='header__link-cont'>
+                <li>
+                <NavLink to='/' className='header__link'>Towns</NavLink>
+                </li>
+                <li>
+                <NavLink to='/pokedex' className='header__link'>Pokédex</NavLink>
+                </li>
+            </ul>
         </div>
     )
 }
