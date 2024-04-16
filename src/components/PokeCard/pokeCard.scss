@@ -14,7 +14,7 @@
     &__name{
         text-transform: uppercase;
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 
     &__id {
@@ -32,11 +32,17 @@
         text-transform: uppercase;
         font-size: 1.25rem;
         color: $poke-yellow;
-        padding-bottom: 1rem;
+        padding-top: .5rem;
+    }
+
+    &__types{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: .75rem;
+        align-items: center;
     }
 
     &__image{
         width: 80%;
-        margin-bottom: 1rem;
     }
 }

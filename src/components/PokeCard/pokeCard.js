@@ -25,9 +25,13 @@ function PokeCard({ pokemon }) {
     return (
         <div className='pokecard'>
             <p className='pokecard__id'>{details.id}</p>
-            <img src={details.sprites.front_default} alt='pokemon' className='pokecard__image'/>
+            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${details.id}.png`} alt='pokemon' className='pokecard__image'/>
             <p className='pokecard__name'>{details.name}</p>
-            <p className='pokecard__type'>{details.types[0].type.name}</p>
+            <div className='pokecard__types'>
+                {details.types.map((type, index) => (
+                    <p key={index} className='pokecard__type'>{type.type.name}</p>
+                ))}
+            </div>
         </div>
     );
 }
