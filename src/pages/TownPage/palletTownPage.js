@@ -2,13 +2,14 @@ import './townPage.scss';
 import SubNav from "../../components/SubNav/subNav";
 import map from '../../assets/images/PalletTownCrop-icon.png';
 import PokeCard from '../../components/PokeCard/pokeCard';
-
+import Pokedex from 'pokedex-promise-v2';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function PalletTownPage() {
+    const P = new Pokedex();
     const [details, setDetails] = useState(null);
-    const [pokeData, setPokeData] = useState(null);
+    const [pokemonEncounters, setPokemonEncounters] = useState([]);
 
     useEffect(() => {
         const getDetails = async () => {
@@ -23,43 +24,39 @@ function PalletTownPage() {
     }, []);
 
     useEffect(() => {
-        const getPokeData = async () => {
-            try {
-                // Iterate through each Pokemon in the details array and fetch its data
-                if (details) {
-                    const promises = details.map(async pokemon => {
-                        const response = await axios.get(pokemon.url);
-                        return response.data;
-                    });
-                    const pokemonData = await Promise.all(promises);
-                    setPokeData(pokemonData);
-                }
-            } catch (err) {
-                console.log(err);
-            }
-        };
+        P.getLocationAreaByName("pallet-town-area")
+            .then((response) => {
+                setPokemonEncounters(response.pokemon_encounters);
+            })
+            .catch((error) => {
+                console.log('There was an ERROR: ', error);
+            });
+    }, [P]);
 
-        getPokeData();
-    }, [details]);
-
-    if (!details) {
+    if (!details || pokemonEncounters.length === 0) {
         return <div>Getting Pokémon... Please hold tight!</div>;
     }
-
 
     return (
         <div className='town'>
             <SubNav />
             <div> <img src={map} alt='map' className='town__map'/> </div>
-            <div>
+            <div className='town__card-cont'>
                 <div className='town__title-cont'>
                     <h1 className='town__title'>pallet town</h1>
                 </div>
-                {details.map((pokemon, index) => (
-                    <div key={index}>
-                        <PokeCard pokemon={pokemon} />
-                    </div>
-                ))}
+                <div className="pokemon-cards">
+                    {pokemonEncounters.map((encounter, index) => {
+                        // Find the details of the encountered Pokemon
+                        const pokemonDetails = details.find(pokemon => pokemon.name === encounter.pokemon.name);
+                        if (!pokemonDetails) return null; // If details not found, skip
+                        return (
+                            <div key={index} className="pokemon-card">
+                                <PokeCard pokemon={pokemonDetails} />
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </div>
     );
