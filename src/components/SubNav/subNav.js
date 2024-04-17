@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './subNav.scss';
 
 function SubNav(){
@@ -5,12 +6,12 @@ function SubNav(){
         <div className='subnav'>
             <ul className='subnav__cont'>
                 <div className='subnav__links--nounderline'>
-                    <li className='subnav__links'>pallet town</li>
-                    <li className='subnav__links'>viridian city </li>                    
+                    <NavLink to='/pallettown' className='subnav__links'>pallet town</NavLink>
+                    <NavLink to='/viridiancity' className='subnav__links'>viridian city </NavLink>                    
                 </div>
                 <div className='subnav__links--underline'>
-                    <li className='subnav__links'>pewter city</li>
-                    <li className='subnav__links'>cerulean city </li>
+                    <NavLink to='/pewtercity' className='subnav__links'>pewter city</NavLink>
+                    <NavLink to='/ceruleancity' className='subnav__links'>cerulean city </NavLink>
                 </div>
             </ul>
         </div>

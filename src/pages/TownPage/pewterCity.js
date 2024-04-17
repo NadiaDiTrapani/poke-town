@@ -24,7 +24,7 @@ function PewterCityPage() {
     }, []);
 
     useEffect(() => {
-        P.getLocationAreaByName("kanto-route-2-north-towards-pewter-city")
+        P.getLocationAreaByName("kanto-route-3-area")
             .then((response) => {
                 setPokemonEncounters(response.pokemon_encounters);
             })
@@ -36,14 +36,6 @@ function PewterCityPage() {
     if (!details ) {
         return <div>Getting Pokémon... Please hold tight!</div>;
     }
-
-    // P.getLocationAreasList()
-    // .then((response) => {
-    //   console.log(response);
-    // })
-    // .catch((error) => {
-    //   console.log('There was an ERROR: ', error);
-    // });
 
     return (
         <div className='town'>
