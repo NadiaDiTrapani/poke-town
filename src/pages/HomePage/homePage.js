@@ -16,9 +16,9 @@ function HomePage() {
 
                     <ul className='homepage__link-cont' >
                         <Link to='/pallettown' className='homepage__links'>pallet town</Link>
-                        <li className='homepage__links'>viridian city </li>
-                        <li className='homepage__links'>pewter city</li>
-                        <li className='homepage__links'>cerulean city </li>
+                        <Link to='/viridiancity' className='homepage__links'>viridian city </Link>
+                        <Link to="/pewtercity" className='homepage__links'>pewter city</Link>
+                        <Link to='/ceruleancity' className='homepage__links'>cerulean city </Link>
                     </ul>
             </div>
         </div>
