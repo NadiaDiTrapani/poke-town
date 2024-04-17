@@ -1,0 +1,28 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.town{
+    background:$red-grad;
+
+    &__map{
+        width: 100%;
+        border-top: solid 5px $poke-yellow;
+        border-bottom: solid 5px $poke-yellow;
+    }
+
+        &__title-cont{
+        background-color: #000;
+        margin: 2rem 0 2rem .5rem;
+        padding: .75rem 1rem 1.75rem 1rem;
+    }
+
+    &__title{
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: -1.75rem 0;
+    }
+}
+
+
+

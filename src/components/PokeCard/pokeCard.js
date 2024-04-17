@@ -22,6 +22,8 @@ function PokeCard({ pokemon }) {
         return <div>Getting Pokémon... Please hold tight!</div>;
     }
 
+
+
     return (
         <div className='pokecard'>
             <p className='pokecard__id'>{details.id}</p>
