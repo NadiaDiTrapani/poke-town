@@ -26,16 +26,13 @@ function Pokedex(){
 
     return(
         <div className='pokedex'>
-            <div className='pokedex__title-cont'>
-                <h1 className='pokedex__title'>Kanto region Pokédex</h1>
-            </div>
-
+            <div className='pokedex__grid'>
             {details.map((pokemon, index) => (
                 <div key={index}>
                     <PokeCard pokemon={pokemon}/>
                 </div>
             ))}
-            
+            </div>
         </div>
     );
 }

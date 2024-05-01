@@ -8,6 +8,12 @@
     &__cont{
         display: flex;
         flex-direction: column;
+
+        @include tablet{
+            flex-direction: row;
+            margin: 0 auto;
+            max-width: 70rem;
+        }
     }
 
     &__links{
@@ -19,20 +25,33 @@
         letter-spacing: 1px;
         text-decoration: none;
 
+        @include tablet{
+            padding: 1rem 1.25rem;
+        }
+
         &--underline{
             border-top: solid 2px #fff;
             display: flex;
             flex-direction: row;
+
+            @include tablet{
+                border: none;
+                width: 100%;
+            }
         }
 
         &--nounderline{
             border-bottom: none;
             display: flex;
             flex-direction: row;
+
+            @include tablet{
+                width: 100%;
+            }
         }
     }
 }
 
 .subnav__links.active{
-    color: $poke-blue;
+    color: $poke-yellow;
 }

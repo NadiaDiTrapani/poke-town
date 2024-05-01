@@ -6,11 +6,12 @@
     padding-bottom: 2rem;
 
     &__image-cont{
-        border: solid 8px $poke-yellow;
+        border-top: solid 8px $poke-yellow;
+        border-bottom: solid 8px $poke-yellow;
         background-image: url(../../assets/images/map.png);
         background-size: cover;
         background-position: center;
-        height: 350px;
+        height: 355px;
     }
 
     &__title{

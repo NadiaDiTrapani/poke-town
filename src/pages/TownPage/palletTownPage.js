@@ -40,12 +40,13 @@ function PalletTownPage() {
     return (
         <div className='town'>
             <SubNav />
-            <div> <img src={map} alt='map' className='town__map'/> </div>
+            <div className='town__map-cont'> <img src={map} alt='map' className='town__map'/> </div>
             <div className='town__card-cont'>
                 <div className='town__title-cont'>
                     <h1 className='town__title'>pallet town</h1>
                 </div>
-                <div className="pokemon-cards">
+
+                <div className="town__grid">
                     {pokemonEncounters.map((encounter, index) => {
                         // Find the details of the encountered Pokemon
                         const pokemonDetails = details.find(pokemon => pokemon.name === encounter.pokemon.name);

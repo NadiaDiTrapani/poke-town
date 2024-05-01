@@ -2,20 +2,37 @@
 @use '../../styles/variables' as *;
 
 .header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: $poke-red;
+
+    &-cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet{
+            flex-direction: row;
+            margin: 0 auto;
+            max-width: 70rem;
+        }
+    }
 
     &__logo{
         transform: rotate(340deg);
         margin: 2rem 0 .5rem 0;
+
+        @include tablet{
+            margin: 1.5rem .5rem 1rem 1.5rem;
+        }
     }
 
     &__link-cont{
         list-style: none;
         display: flex;
         margin-bottom: 1.25rem;
+
+        @include tablet{
+            margin-top: 1.5rem;
+        }
     }
 
     &__link{

@@ -4,12 +4,15 @@
 .pokecard{
     background: $blue-grad;
     border-radius: 1rem 0 1rem 1rem;
-    -webkit-box-shadow: 4px 3px 9px 4px rgba(0,0,0,0.2); 
     box-shadow: 4px 3px 9px 4px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     margin: 1.5rem;
     align-items: center;
+
+    @include tablet{
+        width: 20rem;
+    }
 
     &__name{
         text-transform: uppercase;
@@ -32,12 +35,11 @@
         text-transform: uppercase;
         font-size: 1.25rem;
         color: $poke-yellow;
-        padding-top: .5rem;
+        padding: .5rem 1rem;
     }
 
     &__types{
         display: flex;
-        flex-direction: column;
         padding-bottom: .75rem;
         align-items: center;
     }

@@ -6,14 +6,47 @@
 
     &__map{
         width: 100%;
-        border-top: solid 5px $poke-yellow;
-        border-bottom: solid 5px $poke-yellow;
+        margin-bottom: -.25rem;
+
+        @include tablet{
+            max-width: 68rem;
+            margin: 0 auto;
+        }
+
+        @include desktop{
+            border-bottom: solid 5px $poke-yellow;
+        }
     }
 
-        &__title-cont{
-        background-color: #000;
-        margin: 2rem 0 2rem .5rem;
-        padding: .75rem 1rem 1.75rem 1rem;
+    &__map-cont{
+        border-top: solid 5px $poke-yellow;
+        border-bottom: solid 5px $poke-yellow;
+
+        @include tablet{
+            display: flex;
+        }
+
+        @include desktop{
+            border-bottom: none;
+            padding-bottom: 3rem;
+        }
+    }
+
+    &__title-cont{
+    background-color: #000;
+    margin: 2rem 0 2rem .5rem;
+    padding: .75rem 1rem 1.75rem 1rem;
+
+        @include tablet{
+            margin-left: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            max-width: 68rem;
+        }
+
+        @include desktop{
+            margin: 0 auto;
+        }
     }
 
     &__title{
@@ -25,6 +58,21 @@
 
     &__card-cont{
         padding-bottom: 2rem;
+    }
+
+    &__grid{
+        @include tablet{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding-bottom: 1rem;
+            max-width: 70rem;
+            margin: 0 auto;
+        }
+
+        @include desktop{
+            margin-top: 1.5rem;
+        }
     }
 }
 
