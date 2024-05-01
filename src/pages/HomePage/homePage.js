@@ -9,7 +9,7 @@ function HomePage() {
         <div className='homepage'>
             <div className='homepage__image-cont' />
 
-            <div>
+            <div className='homepage__cont'>
                 <div className='homepage__title-cont'>
                     <p className='homepage__title'>Choose a Kanto town</p>
                 </div>

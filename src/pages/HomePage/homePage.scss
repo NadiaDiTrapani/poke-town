@@ -12,6 +12,18 @@
         background-size: cover;
         background-position: center;
         height: 355px;
+
+        @include tablet{
+            max-width: 68rem;
+            margin: 0 auto;
+        }
+    }
+
+    &__cont{
+        @include tablet{
+            max-width: 68rem;
+            margin: 0 auto;
+        }
     }
 
     &__title{
@@ -25,11 +37,24 @@
         background-color: #000;
         margin: 2rem 0 2rem .5rem;
         padding: .75rem 1rem 1.75rem 1rem;
+
+        @include tablet{
+            max-width: 68rem;
+        }
     }
 
     &__link-cont{
         display: flex;
         flex-direction: column;
+
+        @include tablet{
+            max-width: 68rem;
+            margin: 0 auto;
+        }
+
+        @include desktop{
+            flex-direction: row;
+        }
     }
 
     &__links{
@@ -43,5 +68,9 @@
         text-align: center;
         letter-spacing: 1px;
         text-decoration: none;
+
+        @include desktop{
+            width: 50%;
+        }
     }
 }
